@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PTFEEJXB3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PTFEEJXB3J');
+    </script>  
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+      import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDtbmlJ19oBUOm5dwpzPmtqycs6SrN70eY",
+        authDomain: "bookcounter-c2b0f.firebaseapp.com",
+        projectId: "bookcounter-c2b0f",
+        storageBucket: "bookcounter-c2b0f.appspot.com",
+        messagingSenderId: "218818796464",
+        appId: "1:218818796464:web:76690912bb7199c6595475",
+        measurementId: "G-PTFEEJXB3J",
+
+        };
+          
+    firebase.initializeApp(firebaseConfig);
+    const messaging = firebase.messaging();
+    
+
+    messaging.getToken(messaging, {
+      vapidKey:
+      "BMrv1tbR6FDSwh48Di_UcwMpO6XPjCOcvMZjToB--osR4Jx1O9FG04oDRkYPYWjXrkSVytdYm3p0bCXhRY6Zcew",
+    })
+      .then((currentToken) => {
+        if (currentToken) {
+          localStorage.setItem('fcm' , currentToken)
+          console.log("Firebase Token", currentToken);
+        } else {
+          // Show permission request UI
+          console.log(
+            "No registration token available. Request permission to generate one."
+          );
+          // ...
+        }
+      })
+      .catch((err) => {
+        console.log("An error occurred while retrieving token. ", err);
+        // ...
+      });
+    messaging.requestPermission()
+    .then(function () {
+      console.log("Notification permission granted.");
+      return messaging.getToken()
+      
+    })
+
+    onMessage(messaging, (payload) => {
+      console.log("Message received. ", payload);
+      // ...
+    });
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/firebase-messaging-sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+    </script>  
+</head>
+<body>  
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<Head>
+<Title>Verified</Title>
+<link href="http://fonts.cdnfonts.com/css/omnes" rel="stylesheet">
+<style type="text/css">
+
+  @import url('http://fonts.cdnfonts.com/css/omnes');
+.change-password {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 30px;
+}
+.change-password{
+  text-align: center;
+  font-family: 'Omnes', sans-serif;
+}
+p{
+  font-size: 18px;
+  font-weight: 500;
+}
+</style>
+</Head>
+<body>
+	<div class="change-password">
+    <img src="{% static 'images/check.png' %}">
+		<h2>Verified!</h2>
+    <p>Woo hoo! You have successfully reset your password</p>
+
+
+</body>
+</html>

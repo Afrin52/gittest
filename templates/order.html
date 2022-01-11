@@ -1,0 +1,167 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Counter-book 1</title>
+  </head>
+  <body>
+   	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&family=Pontano+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <style>
+		/* Reset styles */ 
+	   body 
+	   { 
+	   	font-family: 'Maven Pro', sans-serif;
+		font-family: 'Pontano Sans', sans-serif;
+		font-family: 'Poppins', sans-serif;
+	   	margin: 0; 
+	   	padding: 0; 
+	   	min-width: 100%; 
+	   	width: 100% !important; 
+	   	height: 100% !important;
+	   }
+	   body, table, td, div, p, a 
+	   { 
+	   	-webkit-font-smoothing: antialiased; text-size-adjust: 100%; 
+	   	-ms-text-size-adjust: 100%; 
+	   	-webkit-text-size-adjust: 100%; 
+	   	line-height: 100%; 
+	   }
+	   table, td 
+	   { 
+	   	mso-table-lspace: 0pt; 
+	   	mso-table-rspace: 0pt;
+	   	border-collapse: collapse !important; 
+	   	border-spacing: 0; 
+	   }
+	    img 
+	    { 
+    	border: 0; 
+    	line-height: 100%; 
+    	outline: none; 
+    	text-decoration: none; 
+    	-ms-interpolation-mode: bicubic; 
+	    }
+	</style>
+</head>
+
+ <body topmargin="0" rightmargin="0" bottommargin="0" leftmargin="0" marginwidth="0" marginheight="0" width="100%" style="border-collapse: collapse; font-family: 'Maven Pro', sans-serif; border-spacing: 0; margin: 0; padding: 0; width: 100%; height: 100%; -webkit-font-smoothing: antialiased; text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; line-height: 100%; background-color: #F0F0F0;  color: #000000;"  bgcolor="#F0F0F0"  text="#000000">
+ 	<div style="width: 900px; margin: 0 auto;">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto;">
+		<tr>
+			<th>
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto; width: 90%;">
+					<tr>
+						<th></th>
+						<th style="text-align: right; color: #CDCDD1; background-color: #fff;">
+							<h2 style="font-size: 20px;">Order Confirmation</h2>
+						</th>
+					</tr>
+				</table>
+
+				<br>
+
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto; width: 90%;">
+					<tr>
+						<td style="text-align: left; color: #000000;" rowspan="4">
+							<h1 style="font-size: 30px; line-height: 52px;">{{data.job_title}}</h1>
+							<p style="font-size: 16px; color: #6A6874; line-height: 25px; font-weight: 300;">{{data.description}}</p>
+						</td>
+						<td style="text-align: right; color: #000000;">
+							<p style="font-size: 16px; color: #000; font-weight: 500;">Customer Details</p>
+							
+							<p style="font-size: 16px; color: #6A6874; line-height: 10px; font-weight: 300; padding: 0; margin: 0;">{{data.customer_name}}</p>
+							<p style="font-size: 16px; color: #6A6874; line-height: 10px; font-weight: 300;  padding: 0; margin: 0; line-height: 37px;">{{data.phone}}</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right; color: #000000;">
+							<p style="font-size: 16px; color: #000; font-weight: 500;">Job ID</p>
+							<p style="font-size: 16px; color: #6A6874; line-height: 10px; font-weight: 300; padding: 0; margin: 0;">{{data.order_id}}</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right; color: #000000;">
+							<p style="font-size: 16px; color: #000; font-weight: 500;">Order taken by</p>
+							<p style="font-size: 16px; color: #6A6874; line-height: 10px; font-weight: 300; padding: 0; margin: 0;">Chelsea Lea</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right; color: #000000;">
+							<p style="font-size: 16px; color: #000; font-weight: 500;">Date of order</p>
+							<p style="font-size: 16px; color: #6A6874; line-height: 10px; font-weight: 300; padding: 0; margin: 0;">{{data.created_at|date:"D, d M Y"}}</p>
+						</td>
+					</tr>
+				</table>
+				
+				<br><br>
+
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto; width: 90%;">
+					<tr>
+						<td style="text-align: left; color: #000000;">
+							<p style="font-size: 16px; color: #060417; line-height: 32px; font-weight: 500; padding: 0; margin: 0;">({{data.attachment.count}})  Attachments</p>
+							<hr style="border: 1px solid #e3e3e3;">
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left; color: #000000;">
+							{% for attachment in data.attachment.all %}
+							<img style=" height: 170px;" src= "{{ attachment.file.url }}" alt="attachment">
+							{% endfor %}
+						</td>
+					</tr>
+					
+				</table>
+
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto; width: 90%;">
+					<tr>
+						<td style="text-align: left; color: #000000;">
+							<p style="font-size: 16px; color: #060417; line-height: 32px; font-weight: 500; padding: 0; margin: 0;">({{comment.count}}) Comments</p>
+							<hr style="border: 1px solid #e3e3e3;">
+						</td>
+					</tr>
+					{% for comment in comment %}
+					<tr>
+						<td style="padding: 3px;">
+							<div style="text-align: left; color: #000000; border:1px solid #CDCDD1; padding: 12px;">
+								<p style="font-size: 16px; color: #383645; font-weight: 500; padding: 0; margin: 0;">{{ comment.commented_by.full_name}} <span style="font-size: 12px; color: #6A6874; line-height: 32px; font-weight: 500; padding: 0; margin: 0;">{{comment.commented_at|date:"dM,Y"}}</span></p>
+								<p style="font-size: 16px; color: #6A6874; line-height: 15px; font-weight: 300; padding: 0; margin: 0;">{{ comment.comment }}</p>
+							</div>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<br><br>
+				
+				<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; background-color: #fff; margin: 0 auto; width: 90%;">
+					<tr>
+						<td style="text-align: left; color: #000000;">
+							<p style="font-size: 16px; color: #060417; line-height: 32px; font-weight: 500; padding: 0; margin: 0;">Questions?</p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: left; color: #000000;">
+							<p style="font-size: 16px; color: #6A6874; line-height: 15px; font-weight: 300; padding: 0; margin: 0;">Please contact us on <span style="font-size: 12px; color: #383645; line-height: 32px; font-weight: 500; padding: 0; margin: 0;text-decoration: underline;">(07) 3888 3737</span> or email <span style="font-size: 12px; color: #383645; line-height: 32px; font-weight: 500; padding: 0; margin: 0;text-decoration: underline;">office@theplantshack.com.au</span></p>
+						</td>
+					</tr>
+				</table>
+
+				<br><br>
+				
+			</th>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
+  </body>
+</html>
